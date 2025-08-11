@@ -1,8 +1,887 @@
-<!-- Existing content of index.html -->
-<!-- Footer content goes here -->
 
-<!-- Contact Section -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:fragrista@gmail.com">fragrista@gmail.com</a></p>
-</section>
+<div class="price">$19.99</div>
+
+   <img src="https://your-image-url.com/floral-essence.jpg" alt="Product Name">
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fragrista - Premium Incense Sticks</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #2d4f4d;
+        color: white;
+        line-height: 1.6;
+    }
+
+    /* Navigation */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(45, 79, 77, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .logo {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: #d8e6c3;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #d8e6c3;
+    }
+
+    .nav-btn {
+        background-color: #d8e6c3;
+        color: #2d4f4d;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .nav-btn:hover {
+        background-color: #c3d4a6;
+        transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 120px 60px 60px;
+        min-height: 100vh;
+    }
+
+    .hero-left {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .hero-left h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 64px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .hero-left p {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+
+    .hero-left p span {
+        font-weight: 400;
+        font-style: italic;
+        color: #d8e6c3;
+    }
+
+    .shop-btn {
+        background-color: #d8e6c3;
+        color: #2d4f4d;
+        padding: 16px 45px;
+        border: none;
+        border-radius: 40px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .shop-btn:hover {
+        background-color: #c3d4a6;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(216, 230, 195, 0.3);
+    }
+
+    .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .image-mask {
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(135deg, #d8e6c3, #a8c686);
+        -webkit-clip-path: path("M250,0 C350,0 500,0 500,250 C500,350 500,500 250,500 C150,500 0,500 0,250 C0,150 0,0 250,0 Z");
+        clip-path: path("M250,0 C350,0 500,0 500,250 C500,350 500,500 250,500 C150,500 0,500 0,250 C0,150 0,0 250,0 Z");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 120px;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    /* Products Section */
+    .products {
+        padding: 100px 60px;
+        background: linear-gradient(135deg, #1e3a38, #2d4f4d);
+    }
+
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #d8e6c3;
+    }
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 60px;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(216, 230, 195, 0.2);
+    }
+
+    .product-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-image {
+        margin-bottom: 20px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .product-image img:hover {
+        transform: scale(1.05);
+    }
+
+    .product-icon {
+        font-size: 80px;
+        display: block;
+    }
+
+    .product-card h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: #d8e6c3;
+    }
+
+    .product-card p {
+        margin-bottom: 25px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+    }
+
+    .price {
+        font-size: 24px;
+        font-weight: 700;
+        color: #d8e6c3;
+        margin-bottom: 25px;
+    }
+
+    .add-to-cart {
+        background-color: #d8e6c3;
+        color: #2d4f4d;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+    }
+
+    .add-to-cart:hover {
+        background-color: #c3d4a6;
+        transform: translateY(-2px);
+    }
+
+    /* About Section */
+    .about {
+        padding: 100px 60px;
+        background-color: #2d4f4d;
+    }
+
+    .about-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .about-text h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px;
+        margin-bottom: 30px;
+        color: #d8e6c3;
+    }
+
+    .about-text p {
+        font-size: 18px;
+        margin-bottom: 25px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+    }
+
+    .stats {
+        display: flex;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        color: #d8e6c3;
+        display: block;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .about-visual {
+        text-align: center;
+        font-size: 200px;
+        color: #d8e6c3;
+        opacity: 0.7;
+    }
+
+    /* Benefits Section */
+    .benefits {
+        padding: 100px 60px;
+        background: linear-gradient(135deg, #1e3a38, #2d4f4d);
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .benefit {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .benefit-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .benefit h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #d8e6c3;
+    }
+
+    .benefit p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 100px 60px;
+        background-color: #2d4f4d;
+    }
+
+    .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 50px;
+        border-radius: 20px;
+        border: 1px solid rgba(216, 230, 195, 0.2);
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .form-group label {
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #d8e6c3;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 15px;
+        border: 1px solid rgba(216, 230, 195, 0.3);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 16px;
+        transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #d8e6c3;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        background-color: #d8e6c3;
+        color: #2d4f4d;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+    }
+
+    .submit-btn:hover {
+        background-color: #c3d4a6;
+        transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+        background: #1e3a38;
+        padding: 60px 60px 30px;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-section h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #d8e6c3;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        line-height: 1.8;
+        transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+        color: #d8e6c3;
+    }
+
+    .footer-section ul {
+        list-style: none;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        font-size: 24px;
+        transition: transform 0.3s;
+    }
+
+    .social-links a:hover {
+        transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(216, 230, 195, 0.2);
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+        .navbar {
+            padding: 15px 30px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 30px 60px;
+        }
+
+        .hero-left,
+        .hero-right {
+            max-width: 100%;
+        }
+
+        .hero-left h1 {
+            font-size: 48px;
+        }
+
+        .hero-left p {
+            font-size: 28px;
+        }
+
+        .image-mask {
+            width: 350px;
+            height: 350px;
+            margin-top: 40px;
+        }
+
+        .products,
+        .about,
+        .benefits,
+        .contact {
+            padding: 80px 30px;
+        }
+
+        .about-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .stats {
+            justify-content: center;
+        }
+
+        .footer {
+            padding: 60px 30px 30px;
+        }
+    }
+
+    /* Notification Styles */
+    .notification {
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        background: #d8e6c3;
+        color: #2d4f4d;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+    }
+
+    .notification.show {
+        transform: translateX(0);
+    }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Fragrista</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-btn">Shop Now</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <h1>PREMIUM<br>INCENSE STICKS</h1>
+            <p>All-natural<br>& <span>all for you</span></p>
+            <button class="shop-btn">SHOP NOW</button>
+        </div>
+        <div class="hero-right">
+            <div class="image-mask">🌿</div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2 class="section-title">Our Premium Collection</h2>
+        <p class="section-subtitle">Handcrafted incense sticks and holders made with the finest natural ingredients for your perfect meditation experience</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://your-image-url.com/floral-essence.jpg" alt="Floral Essence Incense" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="product-icon" style="display: none;">🌸</span>
+                </div>
+                <h3>Floral Essence</h3>
+                <p>Delicate blend of jasmine, rose, and lavender. Perfect for relaxation and creating a peaceful atmosphere in your home.</p>
+                <div class="price">$19.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <span class="product-icon">🌲</span>
+                <h3>Forest Harmony</h3>
+                <p>Rich sandalwood and cedar wood blend. Brings the calming essence of nature indoors for deep meditation sessions.</p>
+                <div class="price">$28.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <span class="product-icon">🏺</span>
+                <h3>Ceramic Holders</h3>
+                <p>Handcrafted ceramic incense holders with intricate patterns. Heat-resistant and beautifully designed for any space.</p>
+                <div class="price">$32.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <span class="product-icon">🪵</span>
+                <h3>Wooden Holders</h3>
+                <p>Sustainable bamboo and teak wood holders. Eco-friendly design that complements any meditation or living space.</p>
+                <div class="price">$18.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <span class="product-icon">🎋</span>
+                <h3>Zen Collection</h3>
+                <p>Carefully curated set of our most popular scents. Includes bamboo, green tea, and lotus blossom fragrances.</p>
+                <div class="price">$45.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <span class="product-icon">🎁</span>
+                <h3>Gift Set</h3>
+                <p>Complete starter set with assorted incense sticks, premium holder, and beautiful packaging. Perfect for gifting.</p>
+                <div class="price">$59.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Fragrista</h2>
+                <p>For over a decade, Fragrista has been dedicated to creating the finest incense sticks and holders using traditional methods passed down through generations.</p>
+                <p>We source only the purest natural ingredients from sustainable farms, ensuring each stick burns cleanly and fills your space with authentic, therapeutic fragrances.</p>
+                <p>Our commitment to quality and sustainability makes us the trusted choice for meditation centers, yoga studios, and homes worldwide.</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50k+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Natural</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">🧘‍♀️</div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2 class="section-title">Why Choose Fragrista?</h2>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <span class="benefit-icon">🌱</span>
+                <h3>100% Natural</h3>
+                <p>Made with pure essential oils and natural binding agents. No synthetic fragrances or harmful chemicals ever used.</p>
+            </div>
+            
+            <div class="benefit">
+                <span class="benefit-icon">🎨</span>
+                <h3>Handcrafted Quality</h3>
+                <p>Each incense stick is carefully hand-rolled by skilled artisans using traditional techniques for consistent quality.</p>
+            </div>
+            
+            <div class="benefit">
+                <span class="benefit-icon">🚚</span>
+                <h3>Fast Shipping</h3>
+                <p>Free shipping on orders over $50. Most orders arrive within 3-5 business days with careful packaging.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Have questions about our products or need personalized recommendations? We'd love to help you find the perfect incense for your needs.</p>
+            
+            <form class="contact-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us how we can help you find the perfect incense..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Fragrista</h3>
+                <p>Creating peaceful moments through premium incense and holders. Handcrafted with love and natural ingredients.</p>
+                <div class="social-links">
+                    <a href="#">📘</a>
+                    <a href="#">📷</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📌</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="#">Incense Sticks</a></li>
+                    <li><a href="#">Wooden Holders</a></li>
+                    <li><a href="#">Ceramic Holders</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Care Guide</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Fragrista. All rights reserved. Made with 🌿 for peaceful moments.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('h3').textContent;
+                showNotification(`${productName} added to cart! 🛒`);
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Message sent successfully! We\'ll get back to you soon. ✨');
+            this.reset();
+        });
+
+        // Shop now buttons
+        document.querySelectorAll('.shop-btn, .nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelector('#products').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Notification system
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(45, 79, 77, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(45, 79, 77, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
